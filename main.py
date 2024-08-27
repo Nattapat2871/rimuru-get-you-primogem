@@ -75,6 +75,30 @@ async def login(ctx):
     modal = MyModal()
     await ctx.send_modal(modal)
 
+@bot.tree.command(name="help", description="แสดงคำสั่งช่วยเหลือ")
+async def help_command(interaction: discord.Interaction):
+    # ส่งการตอบกลับแบบโต้ตอบเพื่อแจ้งให้ Discord ทราบว่าคุณกำลังดำเนินการ
+    await interaction.response.defer()
+
+    # สร้าง Embed ขึ้นมา
+    embed = discord.Embed(
+        title="ช่วยเหลือ",
+        description="นี่คือคำแนะนำเกี่ยวกับการใช้งาน bot",
+        color=discord.Color.blue()
+    )
+
+    # เพิ่มลิงก์ YouTube เข้าไปใน Embed
+    embed.add_field(
+        name="",
+        value="[ดิสเจ้าของบอท](https://discord.com/users/1007237437627572275)",
+        inline=False
+    )
+
+    # ส่ง Embed
+    await interaction.followup.send(embed=embed)
+
+    # ส่งข้อความธรรมดานอกเหนือจาก Embed
+    await interaction.followup.send("https://www.youtube.com/watch?v=UN29g2G7RsA")
 
 
 
