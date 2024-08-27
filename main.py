@@ -2,7 +2,7 @@ import os
 import discord
 from discord.ext import commands
 from discord import app_commands
-from server import server_on
+from alive import server_on
 
 intents = discord.Intents.default()
 intents.message_content = True
