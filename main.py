@@ -84,7 +84,7 @@ async def on_message(message):
 
     await bot.process_commands(message)
 
-    ห
+server_on()
 
 # ใส่โทเค็นของบอท
 bot.run(os.getenv('TOKEN'))
