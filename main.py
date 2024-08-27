@@ -46,9 +46,13 @@ class MyModal(discord.ui.Modal, title='Login auto check in Hoyoverse Games'):
 async def on_ready():
     await bot.tree.sync()
     print (f'Logged in as {bot.user}')
+    
+    # Setting the bot's streaming activity
     streaming_activity = discord.Streaming(
-     name="Dev by Nattapat2871",
-     url="https://www.twitch.tv/nattapat2871_")
+        name="Dev by Nattapat2871",
+        url="https://www.twitch.tv/nattapat2871_"
+    )
+    await bot.change_presence(activity=streaming_activity)
 
 @bot.command()
 async def ping(ctx):
